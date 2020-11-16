@@ -21,9 +21,9 @@
           <h1>{{item}}</h1>
         </div>
       </div>
-      <!-- 如果需要分页器 -->
-      <div class="swiper-pagination"></div>
     </div>
+          <!-- 如果需要分页器 -->
+      <div class="swiper-pagination"></div>
   </div>
 </template>
 
@@ -51,7 +51,7 @@ export default {
        new Swiper ('.swiper-container', {
         loop: true, // 循环模式选项
         autoplay: {
-          delay: 1000,
+          delay: 5000,
           stopOnLastSlide: false,
           disableOnInteraction: false,
         },
@@ -69,16 +69,30 @@ export default {
 }
 </script>
 
-<style lang="scss" >
-.banner{
-  img{
-    width: 7.5rem;
-    height: 3rem;
-  }
-  .swiper-container {
-    width: 7.5rem;
-    height: 3rem;
-  }  
+<style lang="scss" scoped>
+.banner ::v-deep .swiper-pagination {
+  right: 0 ;
+  width: 100px;
+  height: 20px;
 }
+.banner{
+ width: 200px;
+ height: 100px;
+ margin: 50px auto;
+ border: 1px solid #ccc;
+ position: relative;
+ .swiper-container{
+   width: 100%;
+   height: 100%;
+   position: relative;
+  
+  
+ }
+ .swiper-pagination{
+   position:absolute;
+   bottom:0
+ }
+}
+
 </style>
 
