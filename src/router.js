@@ -5,6 +5,7 @@ const GoodList = ()=>import('@/views/good/List.vue')
 const GoodAdd = ()=>import('@/views/good/Add.vue')
 const Home = ()=>import('@/views/home/Home.vue')
 const Ad = ()=>import('@/views/home/Ad.vue') 
+ const TestStudy = ()=>import('@/views/home/TestStudy.vue')
 const router = new VueRouter({
     mode: 'hash', 
     routes: [
@@ -35,7 +36,15 @@ const router = new VueRouter({
         path: '/good/add',
         component: GoodAdd,
         icon: 'el-icon-location'
+      },
+      {
+        id:45,
+        title:'练习',
+        path:'/home/TestStudy',
+        component:TestStudy,
+        icon:'el-icon-location'
       }
+ 
    
     ]
   })

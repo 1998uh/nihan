@@ -2,23 +2,11 @@
   <div class="banner">
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <!-- <div class="swiper-slide">
-          <img src="../../assets/img/c1.jpg" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="../../assets/img/c2.jpg" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="../../assets/img/c3.jpg" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="../../assets/img/c4.jpg" alt="">
-        </div> -->
         <div class="swiper-slide"
           v-for="item in banners"
           :key="item"
         >
-          <h1>{{item}}</h1>
+          <img src="" alt="">
         </div>
       </div>
     </div>
