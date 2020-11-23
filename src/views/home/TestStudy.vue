@@ -23,10 +23,12 @@
           <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
         </el-tabs>
     </div>
+     <!-- <div :is='com'></div> -->
   </div>
 </template>
 
 <script>
+// import Home from './Home'
 export default {
     data(){
       return{
@@ -38,14 +40,15 @@ export default {
           {id:'5',title:"样式分析5"},
           {id:'6',title:"样式分析6"}, 
         ],
-        activeName:"first"
+        activeName:"first",
+        // com:Home
       }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-.goodindex ::v-deep .el-tabs--top .el-tabs__item.is-top:nth-child(2){
+.goodindex ::v-deep  .el-tabs--top .el-tabs__item.is-top:nth-child(2){
   padding-left: 20px;
 }
 .goodindex ::v-deep .el-tabs__active-bar{

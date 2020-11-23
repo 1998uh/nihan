@@ -1,36 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    
+
 </head>
+
 <body>
     <div id="app">
-        <ul v-for="set in sets">
-            {{set}}
-            <li v-for="n in even(set)">{{ n }}</li>
-          </ul>
     </div>
     <script>
+        // Vue.config.optionMergeStrategies.myOption = function(toVal,fromVal){
+        //     // console.log(fromVal)
+        // }
+        var strategies = Vue.config.optionMergeStrategies
+strategies.myOption = strategies.methods
+        Vue.mixin({
+            created:function(){
+                var myOption = this.$options.myOption
+                if(myOption){
+                    console.log(myOption)
+                }
+            }
+        })
+       var mixin = {
+           data:function(){
+               return{
+                   message:'hello',
+                //    foo:'abc'
+               }
+           },
+           created:function(){
+               console.log('ddddd')
+           },
+           methods: {
+            foo: function () {
+            console.log('foo')
+            },
+            conflicting: function () {
+            console.log('from mixin')
+            }
+        }
+       }
+    //    var component = new Component()
         var vm = new Vue({
             el: '#app',
             data: {
-                sets: [[ 1, 2, 3, 4, 5 ], [6, 7, 8, 9, 10]]
+                message:'goodbye',
+                bar:'def'
             },
-            methods:{
-                even: function (numbers) {
-                    return numbers.filter(function (number) {
-                    return number % 2 === 0
-                    })
+            myOption:'hello',
+            mixins:[mixin],
+            // components:{
+               
+            // },
+            created:function(){
+                console.log(this.$data)
+                console.log('组件钩子被调用')
+            },
+            methods: {
+                foo: function () {
+                console.log('bar')
+                },
+                conflicting: function () {
+                console.log('from self')
                 }
-
             },
 
         })
-      
+        vm.foo()
+        vm.conflicting()
+
     </script>
 </body>
+
 </html>
