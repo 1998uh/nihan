@@ -1,7 +1,9 @@
 <template>
   <div class="banner">
-    
+    <input type="text" ref="usernameInput" @click="good">
+    <div id="hook-arguments-example" ></div>
   </div>
+
 </template>
 
 <script>
@@ -19,6 +21,7 @@ export default {
   
   created () {
     this.getdata()
+    
   },
   methods: {
     getdata: function() {
@@ -27,7 +30,12 @@ export default {
         console.log(res);
         this.dataShow = res.data;
       })
+    },
+    good(){
+      
+      console.log(this.$refs.usernameInput.f)
     }
+     
   }
 
 }

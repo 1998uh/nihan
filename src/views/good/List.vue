@@ -16,7 +16,10 @@
           >{{ item.text }}</div>
         </div>
       </el-collapse-transition>
-      <el-button @click="show3 = !show3" class="marketplace_show_more">{{word}}</el-button>
+      <el-button @click="show3 = c" class="marketplace_show_more">{{word}}</el-button>
+
+
+      <el-button ref="btn" :class="{'a':a,'b':b,'c':c}" @click="dof('中国')">主要按钮</el-button>
     </div>
 
 </template>
@@ -28,6 +31,10 @@ export default {
     return {
      word:"展开/收起",
      show3: false,
+     value:'中国',
+     a:false,
+     b:false,
+     c:false,
         classd: [
         { id: 1, text: "分类1" },
         { id: 2, text: "分类2" },
@@ -43,13 +50,33 @@ export default {
       
     };
   },
+  mounted(){
+  },
   computed:{
    
+  },
+  methods:{
+    dof(value){
+      if(value=='中国'){
+        this.a = true
+      }
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
+.marketplace_aside_b {
+  .a{
+    background: blue;
+  }
+  .b{
+    background: red;
+  }
+  .c{
+    background: green;
+  }
+}
 .marketplace_aside_b .marketplace_aside_show_that {
 height: 35px;
 line-height: 35px;

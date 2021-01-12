@@ -1,7 +1,7 @@
 const GoodList = ()=>import('@/views/good/List.vue')
 const GoodAdd = ()=>import('@/views/good/Add.vue')
 const OrderList = ()=>import('./order/List.vue')
-
+const Echarts = ()=>import('@/views/good/Echarts.vue')
 const Home = ()=>import('@/views/home/Home.vue')
 const Ad = ()=>import('@/views/home/Ad.vue')
 const TestStudy = ()=>import('@/views/home/TestStudy.vue')
@@ -53,6 +53,13 @@ const routes = [
         title:'商品新增',
         path: '/good/add',
         component: GoodAdd,
+        icon: 'el-icon-location'
+      },
+      {
+        id: 44,
+        title:'echarts',
+        path: '/good/Echarts',
+        component: Echarts,
         icon: 'el-icon-location'
       }
     ]

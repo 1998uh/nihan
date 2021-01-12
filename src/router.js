@@ -6,6 +6,8 @@ const GoodAdd = ()=>import('@/views/good/Add.vue')
 const Home = ()=>import('@/views/home/Home.vue')
 const Ad = ()=>import('@/views/home/Ad.vue') 
  const TestStudy = ()=>import('@/views/home/TestStudy.vue')
+ const Echarts = ()=>import('@/views/good/Echarts.vue')
+
 const router = new VueRouter({
     mode: 'hash', 
     routes: [
@@ -43,8 +45,14 @@ const router = new VueRouter({
         path:'/home/TestStudy',
         component:TestStudy,
         icon:'el-icon-location'
-      }
- 
+      },
+      {
+        id:45,
+        title:'学习',
+        path:'/good/Echarts',
+        component:Echarts,
+        icon:'el-icon-location'
+      },
    
     ]
   })
